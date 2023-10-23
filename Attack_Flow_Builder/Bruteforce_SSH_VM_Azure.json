@@ -1,0 +1,223 @@
+{
+  "type": "bundle",
+  "id": "bundle--db401eef-c550-4e2b-a324-16557f4a95d9",
+  "spec_version": "2.1",
+  "created": "2023-10-23T08:29:25.536Z",
+  "modified": "2023-10-23T08:29:25.536Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--c664daff-b594-42f1-94c5-15f307e8421d",
+      "spec_version": "2.1",
+      "created": "2023-10-18T14:55:42.455Z",
+      "modified": "2023-10-23T08:29:25.536Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--db82f5cb-62ae-4fef-9051-36be7d1f2b45",
+      "start_refs": [
+        "attack-action--7c7067b8-ef48-4cac-8401-2d8c9ed5908f",
+        "attack-action--0e8ed943-7b8d-487d-9fb5-4630117731a7"
+      ],
+      "name": "Bruteforce_SSH_VM_Azure",
+      "scope": "incident"
+    },
+    {
+      "type": "identity",
+      "id": "identity--db82f5cb-62ae-4fef-9051-36be7d1f2b45",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.536Z",
+      "modified": "2023-10-23T08:29:25.536Z",
+      "name": "QTN & Nexode",
+      "identity_class": "system"
+    },
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--10123198-85d6-4e38-8e23-f00bc0025845",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "name": "Hacker"
+    },
+    {
+      "type": "user-account",
+      "id": "user-account--22fe0e9a-b864-4afe-b74b-ff5517f789a7",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "display_name": "Azure VM Account"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7c7067b8-ef48-4cac-8401-2d8c9ed5908f",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "OSINT",
+      "description": "Using OSINT tools to sniff and retrieve SSH key that Azure or IT Engineer might have left on the web",
+      "effect_refs": [
+        "attack-operator--68786cff-d24d-4ee0-857d-ac69ce462eb5"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--4375ffbe-b560-416f-b361-8021385c93ac",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "SSH Public Key +\nother information",
+      "object_ref": "attack-action--258e15db-2f02-43f5-9159-b9e013947177"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--0e8ed943-7b8d-487d-9fb5-4630117731a7",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Scanning",
+      "description": "Scanning the Virtual Machine on azure through its public IPv4 address or use Nmap scripts to get more information about SSH",
+      "effect_refs": [
+        "attack-operator--68786cff-d24d-4ee0-857d-ac69ce462eb5"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--68786cff-d24d-4ee0-857d-ac69ce462eb5",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--258e15db-2f02-43f5-9159-b9e013947177",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Bruteforcing",
+      "description": "Use all information and keys to crack the VM SSH key and gained access on the machine"
+    },
+    {
+      "type": "tool",
+      "id": "tool--7c5dd992-fedd-4b8c-aa1a-c57448e4d729",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "name": "Hydra"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--ced8ce1b-1ac5-4b0e-a7d5-960736299612",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "relationship_type": "related-to",
+      "source_ref": "threat-actor--10123198-85d6-4e38-8e23-f00bc0025845",
+      "target_ref": "attack-action--0e8ed943-7b8d-487d-9fb5-4630117731a7"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--85cbc417-7896-45e4-9e84-f54afda89585",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "relationship_type": "related-to",
+      "source_ref": "threat-actor--10123198-85d6-4e38-8e23-f00bc0025845",
+      "target_ref": "attack-action--7c7067b8-ef48-4cac-8401-2d8c9ed5908f"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1a99e75d-5375-4f8d-a4cf-3886d7100d8d",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--68786cff-d24d-4ee0-857d-ac69ce462eb5",
+      "target_ref": "attack-asset--4375ffbe-b560-416f-b361-8021385c93ac"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--af27cf3e-80ad-47eb-bdf9-42498c4e5cf6",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-action--258e15db-2f02-43f5-9159-b9e013947177",
+      "target_ref": "tool--7c5dd992-fedd-4b8c-aa1a-c57448e4d729"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--00b62271-c86b-4963-b97f-3ad694de6ef6",
+      "spec_version": "2.1",
+      "created": "2023-10-23T08:29:25.537Z",
+      "modified": "2023-10-23T08:29:25.537Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-action--258e15db-2f02-43f5-9159-b9e013947177",
+      "target_ref": "user-account--22fe0e9a-b864-4afe-b74b-ff5517f789a7"
+    }
+  ]
+}
