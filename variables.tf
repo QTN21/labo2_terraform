@@ -15,3 +15,9 @@ variable "username" {
   description = "The username for the local account that will be created on the new VM."
   default     = "azureadmin"
 }
+
+variable "password" {
+  type        = string
+  description = "Password du compte ssh"
+  default     = "P@ssw0rd!#!2023"
+}
